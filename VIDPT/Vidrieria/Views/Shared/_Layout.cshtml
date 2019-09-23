@@ -9,24 +9,24 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background:#007bff!important;">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav" style="color: white;">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" style="color: white;" href="~/Views/Home/Index.cshtml">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" style="color: white;" href="~/Views/Home/Index.cshtml">Features</a>
+                </li>
+                <li class="nav-item nav-link"  style="color: white;">
+                    @Html.ActionLink("About", "About", "Home", new {style = "color: white;" })
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link disabled" style="color: white; "href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
         </div>
@@ -35,7 +35,14 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>Holi Amor, Mamaaaaaa, Papaaa :3</p>
+                </div>
+                <div class="col-md-6" >
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d1555.8345173042228!2d-72.95119837327485!3d-38.748356428297214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e2!4m3!3m2!1d-38.7448481!2d-72.9513635!4m5!1s0x9615331c0ea08291%3A0x14e0533842a1450e!2sSotomayor%2C%20Nueva%20Imperial%2C%20Regi%C3%B3n%20de%20la%20Araucan%C3%ADa!3m2!1d-38.7449376!2d-72.9513657!5e0!3m2!1ses!2scl!4v1569198532862!5m2!1ses!2scl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </div>
+            </div>
         </footer>
     </div>
 

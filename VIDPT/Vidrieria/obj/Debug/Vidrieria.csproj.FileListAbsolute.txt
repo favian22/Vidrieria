@@ -80,7 +80,6 @@ C:\Vidrieria\VIDPT\Vidrieria\bin\es\System.Web.Razor.resources.dll
 C:\Vidrieria\VIDPT\Vidrieria\bin\es\System.Web.WebPages.resources.dll
 C:\Vidrieria\VIDPT\Vidrieria\bin\es\System.Web.WebPages.Deployment.resources.dll
 C:\Vidrieria\VIDPT\Vidrieria\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Vidrieria\VIDPT\Vidrieria\obj\Debug\Vidrieria.csprojAssemblyReference.cache
 C:\Vidrieria\VIDPT\Vidrieria\obj\Debug\Vidrieria.csproj.CoreCompileInputs.cache
 C:\Vidrieria\VIDPT\Vidrieria\obj\Debug\Vidrieria.csproj.CopyComplete
 C:\Vidrieria\VIDPT\Vidrieria\obj\Debug\Vidrieria.dll
