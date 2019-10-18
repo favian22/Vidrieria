@@ -84,3 +84,4 @@ C:\Vidrieria\VIDPT\Vidrieria\obj\Debug\Vidrieria.csproj.CoreCompileInputs.cache
 C:\Vidrieria\VIDPT\Vidrieria\obj\Debug\Vidrieria.csproj.CopyComplete
 C:\Vidrieria\VIDPT\Vidrieria\obj\Debug\Vidrieria.dll
 C:\Vidrieria\VIDPT\Vidrieria\obj\Debug\Vidrieria.pdb
+C:\Vidrieria\VIDPT\Vidrieria\obj\Debug\Vidrieria.csprojAssemblyReference.cache
