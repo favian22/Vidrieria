@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="VIDRIERIAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CLIENT">
+          <Key>
+            <PropertyRef Name="CLIENT_ID" />
+          </Key>
+          <Property Name="CLIENT_ID" Type="int" Nullable="false" />
+          <Property Name="FIRST_NAME" Type="varchar(max)" Nullable="false" />
+          <Property Name="LAST_NAME" Type="varchar(max)" Nullable="false" />
+          <Property Name="ADDRESS_CLIENT" Type="varchar(max)" />
+          <Property Name="PHONE" Type="varchar(max)" />
+          <Property Name="FK_COUNTRY_ID" Type="int" />
+          <Property Name="FK_TYPE_CLIENT" Type="int" />
+        </EntityType>
+        <EntityType Name="MASTER_DATA">
+          <Key>
+            <PropertyRef Name="MASTER_DATA_ID" />
+          </Key>
+          <Property Name="MASTER_DATA_ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar(max)" Nullable="false" />
+          <Property Name="CODE" Type="varchar(max)" Nullable="false" />
+          <Property Name="MASTER_TYPE_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="MASTER_TYPE">
+          <Key>
+            <PropertyRef Name="MASTER_TYPE_ID" />
+          </Key>
+          <Property Name="MASTER_TYPE_ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar(max)" Nullable="false" />
+          <Property Name="CODE" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__CLIENT__FK_COUNT__3C69FB99">
+          <End Role="MASTER_DATA" Type="Self.MASTER_DATA" Multiplicity="0..1" />
+          <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MASTER_DATA">
+              <PropertyRef Name="MASTER_DATA_ID" />
+            </Principal>
+            <Dependent Role="CLIENT">
+              <PropertyRef Name="FK_COUNTRY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLIENT__FK_TYPE___3D5E1FD2">
+          <End Role="MASTER_DATA" Type="Self.MASTER_DATA" Multiplicity="0..1" />
+          <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MASTER_DATA">
+              <PropertyRef Name="MASTER_DATA_ID" />
+            </Principal>
+            <Dependent Role="CLIENT">
+              <PropertyRef Name="FK_TYPE_CLIENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MASTER_DA__MASTE__398D8EEE">
+          <End Role="MASTER_TYPE" Type="Self.MASTER_TYPE" Multiplicity="0..1" />
+          <End Role="MASTER_DATA" Type="Self.MASTER_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MASTER_TYPE">
+              <PropertyRef Name="MASTER_TYPE_ID" />
+            </Principal>
+            <Dependent Role="MASTER_DATA">
+              <PropertyRef Name="MASTER_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VIDRIERIAModelStoreContainer">
+          <EntitySet Name="CLIENT" EntityType="Self.CLIENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_DATA" EntityType="Self.MASTER_DATA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASTER_TYPE" EntityType="Self.MASTER_TYPE" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CLIENT__FK_COUNT__3C69FB99" Association="Self.FK__CLIENT__FK_COUNT__3C69FB99">
+            <End Role="MASTER_DATA" EntitySet="MASTER_DATA" />
+            <End Role="CLIENT" EntitySet="CLIENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLIENT__FK_TYPE___3D5E1FD2" Association="Self.FK__CLIENT__FK_TYPE___3D5E1FD2">
+            <End Role="MASTER_DATA" EntitySet="MASTER_DATA" />
+            <End Role="CLIENT" EntitySet="CLIENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MASTER_DA__MASTE__398D8EEE" Association="Self.FK__MASTER_DA__MASTE__398D8EEE">
+            <End Role="MASTER_TYPE" EntitySet="MASTER_TYPE" />
+            <End Role="MASTER_DATA" EntitySet="MASTER_DATA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VIDRIERIAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CLIENT">
+          <Key>
+            <PropertyRef Name="CLIENT_ID" />
+          </Key>
+          <Property Name="CLIENT_ID" Type="Int32" Nullable="false" />
+          <Property Name="FIRST_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LAST_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ADDRESS_CLIENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PHONE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FK_COUNTRY_ID" Type="Int32" />
+          <Property Name="FK_TYPE_CLIENT" Type="Int32" />
+          <NavigationProperty Name="MASTER_DATA" Relationship="Self.FK__CLIENT__FK_COUNT__3C69FB99" FromRole="CLIENT" ToRole="MASTER_DATA" />
+          <NavigationProperty Name="MASTER_DATA1" Relationship="Self.FK__CLIENT__FK_TYPE___3D5E1FD2" FromRole="CLIENT" ToRole="MASTER_DATA" />
+        </EntityType>
+        <EntityType Name="MASTER_DATA">
+          <Key>
+            <PropertyRef Name="MASTER_DATA_ID" />
+          </Key>
+          <Property Name="MASTER_DATA_ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MASTER_TYPE_ID" Type="Int32" />
+          <NavigationProperty Name="CLIENT" Relationship="Self.FK__CLIENT__FK_COUNT__3C69FB99" FromRole="MASTER_DATA" ToRole="CLIENT" />
+          <NavigationProperty Name="CLIENT1" Relationship="Self.FK__CLIENT__FK_TYPE___3D5E1FD2" FromRole="MASTER_DATA" ToRole="CLIENT" />
+          <NavigationProperty Name="MASTER_TYPE" Relationship="Self.FK__MASTER_DA__MASTE__398D8EEE" FromRole="MASTER_DATA" ToRole="MASTER_TYPE" />
+        </EntityType>
+        <EntityType Name="MASTER_TYPE">
+          <Key>
+            <PropertyRef Name="MASTER_TYPE_ID" />
+          </Key>
+          <Property Name="MASTER_TYPE_ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="MASTER_DATA" Relationship="Self.FK__MASTER_DA__MASTE__398D8EEE" FromRole="MASTER_TYPE" ToRole="MASTER_DATA" />
+        </EntityType>
+        <Association Name="FK__CLIENT__FK_COUNT__3C69FB99">
+          <End Role="MASTER_DATA" Type="Self.MASTER_DATA" Multiplicity="0..1" />
+          <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MASTER_DATA">
+              <PropertyRef Name="MASTER_DATA_ID" />
+            </Principal>
+            <Dependent Role="CLIENT">
+              <PropertyRef Name="FK_COUNTRY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CLIENT__FK_TYPE___3D5E1FD2">
+          <End Role="MASTER_DATA" Type="Self.MASTER_DATA" Multiplicity="0..1" />
+          <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MASTER_DATA">
+              <PropertyRef Name="MASTER_DATA_ID" />
+            </Principal>
+            <Dependent Role="CLIENT">
+              <PropertyRef Name="FK_TYPE_CLIENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MASTER_DA__MASTE__398D8EEE">
+          <End Role="MASTER_TYPE" Type="Self.MASTER_TYPE" Multiplicity="0..1" />
+          <End Role="MASTER_DATA" Type="Self.MASTER_DATA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MASTER_TYPE">
+              <PropertyRef Name="MASTER_TYPE_ID" />
+            </Principal>
+            <Dependent Role="MASTER_DATA">
+              <PropertyRef Name="MASTER_TYPE_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VIDRIERIAEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CLIENT" EntityType="Self.CLIENT" />
+          <EntitySet Name="MASTER_DATA" EntityType="Self.MASTER_DATA" />
+          <EntitySet Name="MASTER_TYPE" EntityType="Self.MASTER_TYPE" />
+          <AssociationSet Name="FK__CLIENT__FK_COUNT__3C69FB99" Association="Self.FK__CLIENT__FK_COUNT__3C69FB99">
+            <End Role="MASTER_DATA" EntitySet="MASTER_DATA" />
+            <End Role="CLIENT" EntitySet="CLIENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CLIENT__FK_TYPE___3D5E1FD2" Association="Self.FK__CLIENT__FK_TYPE___3D5E1FD2">
+            <End Role="MASTER_DATA" EntitySet="MASTER_DATA" />
+            <End Role="CLIENT" EntitySet="CLIENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MASTER_DA__MASTE__398D8EEE" Association="Self.FK__MASTER_DA__MASTE__398D8EEE">
+            <End Role="MASTER_TYPE" EntitySet="MASTER_TYPE" />
+            <End Role="MASTER_DATA" EntitySet="MASTER_DATA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VIDRIERIAModelStoreContainer" CdmEntityContainer="VIDRIERIAEntities">
+          <EntitySetMapping Name="CLIENT">
+            <EntityTypeMapping TypeName="VIDRIERIAModel.CLIENT">
+              <MappingFragment StoreEntitySet="CLIENT">
+                <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="ADDRESS_CLIENT" ColumnName="ADDRESS_CLIENT" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="FK_COUNTRY_ID" ColumnName="FK_COUNTRY_ID" />
+                <ScalarProperty Name="FK_TYPE_CLIENT" ColumnName="FK_TYPE_CLIENT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_DATA">
+            <EntityTypeMapping TypeName="VIDRIERIAModel.MASTER_DATA">
+              <MappingFragment StoreEntitySet="MASTER_DATA">
+                <ScalarProperty Name="MASTER_DATA_ID" ColumnName="MASTER_DATA_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="MASTER_TYPE_ID" ColumnName="MASTER_TYPE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASTER_TYPE">
+            <EntityTypeMapping TypeName="VIDRIERIAModel.MASTER_TYPE">
+              <MappingFragment StoreEntitySet="MASTER_TYPE">
+                <ScalarProperty Name="MASTER_TYPE_ID" ColumnName="MASTER_TYPE_ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

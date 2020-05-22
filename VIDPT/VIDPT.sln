@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vidrieria", "Vidrieria\Vidrieria.csproj", "{9BCC9866-917B-4562-99E3-7491ABC304CB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{3CA96145-9994-4D96-B9CF-F210B1D33B95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{539EA53F-454E-4A03-A54B-CDCEA0FA84D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{9BCC9866-917B-4562-99E3-7491ABC304CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BCC9866-917B-4562-99E3-7491ABC304CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BCC9866-917B-4562-99E3-7491ABC304CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CA96145-9994-4D96-B9CF-F210B1D33B95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CA96145-9994-4D96-B9CF-F210B1D33B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CA96145-9994-4D96-B9CF-F210B1D33B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CA96145-9994-4D96-B9CF-F210B1D33B95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{539EA53F-454E-4A03-A54B-CDCEA0FA84D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{539EA53F-454E-4A03-A54B-CDCEA0FA84D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{539EA53F-454E-4A03-A54B-CDCEA0FA84D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{539EA53F-454E-4A03-A54B-CDCEA0FA84D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

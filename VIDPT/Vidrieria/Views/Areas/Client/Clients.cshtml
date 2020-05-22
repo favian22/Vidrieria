@@ -1,0 +1,86 @@
+﻿<script src="~/Scripts/scripts/Clientes.js"></script>
+<link href="~/Content/table/tableStyle.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "Clientes";
+}
+
+<h2>Clients</h2>
+
+
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <label>Nombre</label>
+                    <input type="text" class="text-black-50" name="nombre" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <label>Apellido</label>
+                    <input type="text" class="text-black-50" name="apellido"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <label>Direccion</label>
+                    <input type="text" class="text-black-50" name="direccion"/>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <label>Telefono</label>
+                    <input type="number" class="text-black-50" name="telefono"/>
+                </div>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <label>Ciudad</label>
+                    <select name="ciudad">
+                        <option>Temuco</option>
+                        <option>Imnperial</option>
+                        <option>Lautaro</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    <label>Categoria Cliente</label>
+                    <select name="categoriaCliente">
+                        <option>Vip</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div> <input type="submit" onclick="AddClient()" class="btn btn-primary"/></div>
+        </div>
+
+    </form>
+    <br />
+    <div class="col-12 tableClient">
+        <table class="table" name="tableClient">
+            <thead>
+                <tr style="color:white;">
+                    <td>Nombre</td>
+                    <td>Apellido</td>
+                    <td>Direccion</td>
+                    <td>Telefono</td>
+                    <td>Ciudad</td>
+                    <td>Categoria</td>
+                </tr>
+            </thead>
+            <tbody name="dataClient" id="dataClientId">
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

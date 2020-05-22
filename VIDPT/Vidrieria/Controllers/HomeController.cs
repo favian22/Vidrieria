@@ -26,5 +26,12 @@ namespace Vidrieria.Controllers
 
             return View();
         }
+
+        public ActionResult Clients()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View("../Areas/Client/Clients");
+        }
     }
 }

@@ -7,6 +7,23 @@
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        html {
+            min-height: 100%;
+            position: relative;
+        }
+
+        body {
+            margin: 0;
+            margin-bottom: 40px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            height: 20px;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,46 +34,46 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav" style="color: white;">
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="~/Views/Home/Index.cshtml">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item nav-link" style="color: white;">
+                    @Html.ActionLink("Home", "Index", "Home", new { style = "color: white;" })
+                </li>
+                <li class="nav-item nav-link" style="color: white;">
+                    @Html.ActionLink("About", "About", "Home", new { style = "color: white;" })
+                </li>
+                <li class="nav-item nav-link" style="color: white;">
+                    @Html.ActionLink("Clients", "Clients", "Clients", new { style = "color: white;" })
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="~/Views/Home/Index.cshtml">Features</a>
-                </li>
-                <li class="nav-item nav-link"  style="color: white;">
-                    @Html.ActionLink("About", "About", "Home", new {style = "color: white;" })
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" style="color: white; "href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link disabled" style="color: white; " href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
         </div>
     </nav>
     <div class="container body-content">
-        @RenderBody()
-        <hr />
+        @RenderBody()       
         <footer>
+            <hr />
             <div class="row">
                 <div class="col-md-6">
                     <div class="row" style="font-size: 25px;">
                         <img style="width:50px; height:50px;" src="~/icon/mail.svg" />
-                        <label>: vidrieriapuntarenas@gmail.com</label>
+                        <label> vidrieriapuntarenas@gmail.com</label>
                     </div>
                     <div class="row" style="font-size: 25px;">
                         <img style="width:50px; height:50px;" src="~/icon/device-mobile.svg" />
-                        <label>: vidrieriapuntarenas@gmail.com</label>
+                        <label> Contacto: </label>
                     </div>
                     <div class="row" style="font-size: 25px;">
                         <img style="width:50px; height:50px;" src="~/icon/_ionicons_svg_md-map.svg" />
-                        <label>: vidrieriapuntarenas@gmail.com</label>
+                        <label> Direccion:</label>
                     </div>
                     <div class="row" style="font-size: 25px;">
                         <img style="width:50px; height:50px;" src="~/icon/watch.svg" />
-                        <label>: vidrieriapuntarenas@gmail.com</label>
+                        <label> Horario de atencion: </label>
                     </div>
                 </div>
-                <div class="col-md-6" >
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d1555.8345173042228!2d-72.95119837327485!3d-38.748356428297214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e2!4m3!3m2!1d-38.7448481!2d-72.9513635!4m5!1s0x9615331c0ea08291%3A0x14e0533842a1450e!2sSotomayor%2C%20Nueva%20Imperial%2C%20Regi%C3%B3n%20de%20la%20Araucan%C3%ADa!3m2!1d-38.7449376!2d-72.9513657!5e0!3m2!1ses!2scl!4v1569198532862!5m2!1ses!2scl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                <div class="col-md-6">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d1555.8345173042228!2d-72.95119837327485!3d-38.748356428297214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e2!4m3!3m2!1d-38.7448481!2d-72.9513635!4m5!1s0x9615331c0ea08291%3A0x14e0533842a1450e!2sSotomayor%2C%20Nueva%20Imperial%2C%20Regi%C3%B3n%20de%20la%20Araucan%C3%ADa!3m2!1d-38.7449376!2d-72.9513657!5e0!3m2!1ses!2scl!4v1569198532862!5m2!1ses!2scl" width="600" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
             </div>
         </footer>

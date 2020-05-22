@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VIDRIERIAModelStoreContainer" CdmEntityContainer="VIDRIERIAEntities">
+    <EntitySetMapping Name="CLIENT">
+      <EntityTypeMapping TypeName="VIDRIERIAModel.CLIENT">
+        <MappingFragment StoreEntitySet="CLIENT">
+          <ScalarProperty Name="CLIENT_ID" ColumnName="CLIENT_ID" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="ADDRESS_CLIENT" ColumnName="ADDRESS_CLIENT" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="FK_COUNTRY_ID" ColumnName="FK_COUNTRY_ID" />
+          <ScalarProperty Name="FK_TYPE_CLIENT" ColumnName="FK_TYPE_CLIENT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MASTER_DATA">
+      <EntityTypeMapping TypeName="VIDRIERIAModel.MASTER_DATA">
+        <MappingFragment StoreEntitySet="MASTER_DATA">
+          <ScalarProperty Name="MASTER_DATA_ID" ColumnName="MASTER_DATA_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="MASTER_TYPE_ID" ColumnName="MASTER_TYPE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MASTER_TYPE">
+      <EntityTypeMapping TypeName="VIDRIERIAModel.MASTER_TYPE">
+        <MappingFragment StoreEntitySet="MASTER_TYPE">
+          <ScalarProperty Name="MASTER_TYPE_ID" ColumnName="MASTER_TYPE_ID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

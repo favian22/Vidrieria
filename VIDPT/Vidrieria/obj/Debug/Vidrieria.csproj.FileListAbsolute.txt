@@ -85,3 +85,7 @@ C:\Vidrieria\VIDPT\Vidrieria\obj\Debug\Vidrieria.csproj.CopyComplete
 C:\Vidrieria\VIDPT\Vidrieria\obj\Debug\Vidrieria.dll
 C:\Vidrieria\VIDPT\Vidrieria\obj\Debug\Vidrieria.pdb
 C:\Vidrieria\VIDPT\Vidrieria\obj\Debug\Vidrieria.csprojAssemblyReference.cache
+C:\Vidrieria\VIDPT\Vidrieria\bin\EntityFramework.dll
+C:\Vidrieria\VIDPT\Vidrieria\bin\EntityFramework.SqlServer.dll
+C:\Vidrieria\VIDPT\Vidrieria\bin\EntityFramework.xml
+C:\Vidrieria\VIDPT\Vidrieria\bin\EntityFramework.SqlServer.xml
