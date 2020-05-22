@@ -175,6 +175,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\galeria.css" />
     <Content Include="Content\table\tableStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -380,6 +381,7 @@
     <Content Include="imagenes\img1.jpg" />
     <Content Include="imagenes\img2.jpg" />
     <Content Include="imagenes\img3.jpg" />
+    <Content Include="imagenes\P142284.jpg" />
     <Content Include="Models\Vidrieria.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Vidrieria.Context.cs</LastGenOutput>
@@ -463,6 +465,8 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Areas\Client\Clients.cshtml" />
+    <Content Include="Views\Home\Galeria.cshtml" />
+    <Content Include="Views\Areas\Galerias\GaleriaVentanas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

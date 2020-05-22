@@ -33,5 +33,17 @@ namespace Vidrieria.Controllers
 
             return View("../Areas/Client/Clients");
         }
+
+        public ActionResult Galeria()
+        {
+            ViewBag.Message = "Galeria de trabajos";
+
+            return View();
+        }
+
+        public ActionResult GaleriaVentanas()
+        {
+            return View("../Areas/Galerias/GaleriaVentanas");
+        }
     }
 }
