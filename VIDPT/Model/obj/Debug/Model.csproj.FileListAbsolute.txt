@@ -1,0 +1,12 @@
+C:\Vidrieria\VIDPT\Model\bin\Debug\Model.dll.config
+C:\Vidrieria\VIDPT\Model\bin\Debug\Model.dll
+C:\Vidrieria\VIDPT\Model\bin\Debug\Model.pdb
+C:\Vidrieria\VIDPT\Model\bin\Debug\EntityFramework.dll
+C:\Vidrieria\VIDPT\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Vidrieria\VIDPT\Model\bin\Debug\EntityFramework.xml
+C:\Vidrieria\VIDPT\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Vidrieria\VIDPT\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Vidrieria\VIDPT\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Vidrieria\VIDPT\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Vidrieria\VIDPT\Model\obj\Debug\Model.dll
+C:\Vidrieria\VIDPT\Model\obj\Debug\Model.pdb

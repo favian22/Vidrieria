@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VIDRIERIAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CLIENT">
+    <Key>
+      <PropertyRef Name="CLIENT_ID" />
+    </Key>
+    <Property Name="CLIENT_ID" Type="Int32" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ADDRESS_CLIENT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FK_COUNTRY_ID" Type="Int32" />
+    <Property Name="FK_TYPE_CLIENT" Type="Int32" />
+    <NavigationProperty Name="MASTER_DATA" Relationship="Self.FK__CLIENT__FK_COUNT__3C69FB99" FromRole="CLIENT" ToRole="MASTER_DATA" />
+    <NavigationProperty Name="MASTER_DATA1" Relationship="Self.FK__CLIENT__FK_TYPE___3D5E1FD2" FromRole="CLIENT" ToRole="MASTER_DATA" />
+  </EntityType>
+  <EntityType Name="MASTER_DATA">
+    <Key>
+      <PropertyRef Name="MASTER_DATA_ID" />
+    </Key>
+    <Property Name="MASTER_DATA_ID" Type="Int32" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MASTER_TYPE_ID" Type="Int32" />
+    <NavigationProperty Name="CLIENT" Relationship="Self.FK__CLIENT__FK_COUNT__3C69FB99" FromRole="MASTER_DATA" ToRole="CLIENT" />
+    <NavigationProperty Name="CLIENT1" Relationship="Self.FK__CLIENT__FK_TYPE___3D5E1FD2" FromRole="MASTER_DATA" ToRole="CLIENT" />
+    <NavigationProperty Name="MASTER_TYPE" Relationship="Self.FK__MASTER_DA__MASTE__398D8EEE" FromRole="MASTER_DATA" ToRole="MASTER_TYPE" />
+  </EntityType>
+  <EntityType Name="MASTER_TYPE">
+    <Key>
+      <PropertyRef Name="MASTER_TYPE_ID" />
+    </Key>
+    <Property Name="MASTER_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CODE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MASTER_DATA" Relationship="Self.FK__MASTER_DA__MASTE__398D8EEE" FromRole="MASTER_TYPE" ToRole="MASTER_DATA" />
+  </EntityType>
+  <Association Name="FK__CLIENT__FK_COUNT__3C69FB99">
+    <End Role="MASTER_DATA" Type="Self.MASTER_DATA" Multiplicity="0..1" />
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MASTER_DATA">
+        <PropertyRef Name="MASTER_DATA_ID" />
+      </Principal>
+      <Dependent Role="CLIENT">
+        <PropertyRef Name="FK_COUNTRY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CLIENT__FK_TYPE___3D5E1FD2">
+    <End Role="MASTER_DATA" Type="Self.MASTER_DATA" Multiplicity="0..1" />
+    <End Role="CLIENT" Type="Self.CLIENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MASTER_DATA">
+        <PropertyRef Name="MASTER_DATA_ID" />
+      </Principal>
+      <Dependent Role="CLIENT">
+        <PropertyRef Name="FK_TYPE_CLIENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MASTER_DA__MASTE__398D8EEE">
+    <End Role="MASTER_TYPE" Type="Self.MASTER_TYPE" Multiplicity="0..1" />
+    <End Role="MASTER_DATA" Type="Self.MASTER_DATA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MASTER_TYPE">
+        <PropertyRef Name="MASTER_TYPE_ID" />
+      </Principal>
+      <Dependent Role="MASTER_DATA">
+        <PropertyRef Name="MASTER_TYPE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="VIDRIERIAEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CLIENT" EntityType="Self.CLIENT" />
+    <EntitySet Name="MASTER_DATA" EntityType="Self.MASTER_DATA" />
+    <EntitySet Name="MASTER_TYPE" EntityType="Self.MASTER_TYPE" />
+    <AssociationSet Name="FK__CLIENT__FK_COUNT__3C69FB99" Association="Self.FK__CLIENT__FK_COUNT__3C69FB99">
+      <End Role="MASTER_DATA" EntitySet="MASTER_DATA" />
+      <End Role="CLIENT" EntitySet="CLIENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CLIENT__FK_TYPE___3D5E1FD2" Association="Self.FK__CLIENT__FK_TYPE___3D5E1FD2">
+      <End Role="MASTER_DATA" EntitySet="MASTER_DATA" />
+      <End Role="CLIENT" EntitySet="CLIENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MASTER_DA__MASTE__398D8EEE" Association="Self.FK__MASTER_DA__MASTE__398D8EEE">
+      <End Role="MASTER_TYPE" EntitySet="MASTER_TYPE" />
+      <End Role="MASTER_DATA" EntitySet="MASTER_DATA" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

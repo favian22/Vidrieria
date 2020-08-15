@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using DbBliblioteca;
 using System.Web.Mvc;
-using Vidrieria.Models;
 
 namespace Vidrieria.Views.Areas.Client
 {
@@ -12,13 +8,15 @@ namespace Vidrieria.Views.Areas.Client
         // GET: Clients
         public ActionResult Clients()
         {
+            var clientRepository = new ClientRepository();
+            var client = clientRepository.Getclients();
 
             return RedirectToAction("Clients");
         }
 
         public void AddClient(string name)
         {
-            var x = new CLIENT();
+            
             
         }
     }

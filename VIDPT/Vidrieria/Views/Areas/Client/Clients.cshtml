@@ -1,4 +1,5 @@
-﻿<script src="~/Scripts/scripts/Clientes.js"></script>
+﻿@model List<DbBliblioteca.CLIENT>
+<script src="~/Scripts/scripts/Clientes.js"></script>
 <link href="~/Content/table/tableStyle.css" rel="stylesheet" />
 @{
     ViewBag.Title = "Clientes";
@@ -19,7 +20,7 @@
             <div class="col-md-4">
                 <div>
                     <label>Apellido</label>
-                    <input type="text" class="text-black-50" name="apellido"/>
+                    <input type="text" class="text-black-50" name="apellido" />
                 </div>
             </div>
         </div>
@@ -28,17 +29,17 @@
             <div class="col-md-4">
                 <div>
                     <label>Direccion</label>
-                    <input type="text" class="text-black-50" name="direccion"/>
+                    <input type="text" class="text-black-50" name="direccion" />
                 </div>
             </div>
             <div class="col-md-4">
                 <div>
                     <label>Telefono</label>
-                    <input type="number" class="text-black-50" name="telefono"/>
+                    <input type="number" class="text-black-50" name="telefono" />
                 </div>
             </div>
         </div>
-         <div class="row">
+        <div class="row">
             <div class="col-md-4">
                 <div>
                     <label>Ciudad</label>
@@ -60,27 +61,41 @@
         </div>
 
         <div class="row">
-            <div> <input type="submit" onclick="AddClient()" class="btn btn-primary"/></div>
+            <div> <input type="submit" onclick="AddClient()" class="btn btn-primary" /></div>
         </div>
 
     </form>
     <br />
-    <div class="col-12 tableClient">
-        <table class="table" name="tableClient">
-            <thead>
-                <tr style="color:white;">
-                    <td>Nombre</td>
-                    <td>Apellido</td>
-                    <td>Direccion</td>
-                    <td>Telefono</td>
-                    <td>Ciudad</td>
-                    <td>Categoria</td>
-                </tr>
-            </thead>
-            <tbody name="dataClient" id="dataClientId">
-            </tbody>
-        </table>
-    </div>
+    @if (Model != null)
+    {
+        <div class="col-12 tableClient">
+            <table class="table" name="tableClient">
+                <thead>
+                    <tr style="color:white;">
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Direccion</td>
+                        <td>Telefono</td>
+                        <td>Ciudad</td>
+                        <td>Categoria</td>
+                    </tr>
+                </thead>
+                <tbody name="dataClient" id="dataClientId">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.FIRST_NAME</td>
+                            <td>@item.LAST_NAME</td>
+                            <td>@item.ADDRESS_CLIENT</td>
+                            <td>@item.PHONE</td>
+                            <td>@item.CITY.NAME</td>
+                            <td>@item.MASTER_DATA1.NAME</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
 
 </div>
 

@@ -89,3 +89,6 @@ C:\Vidrieria\VIDPT\Vidrieria\bin\EntityFramework.dll
 C:\Vidrieria\VIDPT\Vidrieria\bin\EntityFramework.SqlServer.dll
 C:\Vidrieria\VIDPT\Vidrieria\bin\EntityFramework.xml
 C:\Vidrieria\VIDPT\Vidrieria\bin\EntityFramework.SqlServer.xml
+C:\Vidrieria\VIDPT\Vidrieria\bin\DbBliblioteca.dll
+C:\Vidrieria\VIDPT\Vidrieria\bin\DbBliblioteca.pdb
+C:\Vidrieria\VIDPT\Vidrieria\bin\DbBliblioteca.dll.config

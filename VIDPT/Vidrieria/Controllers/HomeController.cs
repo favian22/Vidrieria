@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DbBliblioteca;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -30,8 +31,10 @@ namespace Vidrieria.Controllers
         public ActionResult Clients()
         {
             ViewBag.Message = "Your contact page.";
+            var clientRepository = new ClientRepository();
+            var client = clientRepository.Getclients();
 
-            return View("../Areas/Client/Clients");
+            return View("../Areas/Client/Clients", client);
         }
 
         public ActionResult Galeria()
